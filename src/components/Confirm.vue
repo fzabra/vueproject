@@ -17,7 +17,6 @@
           <p class="md-subheading">Dear <span class="md-title">{{customerFirstName}}</span>, for purchasing <br>
             <span class="md-body-2">{{ productData.title }}</span></p>
           <p class="md-subheading">You will have receiave one email in <span class="md-title">{{customerEmail}}</span> to confirm your order.</p>
-          <p><img src="../assets/KPN_logo.png" alt="KPN" width="100"/></p>
           <md-button class="md-raised md-primary" :to="{path: '/'}">einde</md-button>
         </div>
       </div>
