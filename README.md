@@ -1,5 +1,5 @@
 
-# KPN SHOP - Vue Project
+# Vue Project
 
 > A Vue.js project with Vue Material https://vuematerial.io/
 
