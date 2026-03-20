@@ -1,36 +1,36 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HomePage from '@/components/HomePage'
-import Product from '@/components/Product'
-import Checkout from '@/components/Checkout'
-import Confirm from '@/components/Confirm'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '@/components/HomePage.vue'
+import Product from '@/components/Product.vue'
+import Checkout from '@/components/Checkout.vue'
+import Confirm from '@/components/Confirm.vue'
 
-Vue.use(Router)
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomePage
+  },
+  {
+    path: '/product/:product_id',
+    name: 'product',
+    component: Product,
+    props: true
+  },
+  {
+    path: '/product/:product_id/checkout',
+    name: 'checkout',
+    component: Checkout,
+    props: true
+  },
+  {
+    path: '/product/:product_id/confirm',
+    name: 'confirm',
+    component: Confirm,
+    props: true
+  }
+]
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      component: HomePage
-    },
-    {
-      path: '/product/:product_id',
-      component: Product,
-      name: 'product',
-      props: true
-    },
-    {
-      path: '/product/:product_id/checkout',
-      component: Checkout,
-      name: 'checkout',
-      props: true
-    },
-    {
-      path: '/product/:product_id/confirm',
-      component: Confirm,
-      name: 'confirm',
-      props: true
-    }
-  ]
+export default createRouter({
+  history: createWebHistory(),
+  routes
 })

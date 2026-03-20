@@ -1,17 +1,12 @@
-import data from './products.data'
+import products from './products.data'
 
 const ProductsApi = {
-  getProducts () {
-    return data
+  getProducts() {
+    return products
   },
 
-  getProductsWithId (id) {
-    return data.filter(item => item.id === id)[0]
-  },
-
-  sendOffer (offerData) {
-    /* eslint-disable no-// */
-    // TODO
+  getProductById(id) {
+    return products.find((item) => item.id === id) || null
   }
 }
 

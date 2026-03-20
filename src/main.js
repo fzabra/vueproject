@@ -1,19 +1,12 @@
-import Vue from 'vue'
-import App from './App'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
 import router from './router'
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/black-green-dark.css'
-import './assets/theme/kpn.scss'
+import './assets/main.css'
 
-Vue.use(VueMaterial)
+const app = createApp(App)
 
-Vue.config.productionTip = false
+app.use(createPinia())
+app.use(router)
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: {App},
-  template: '<App/>'
-})
+app.mount('#app')

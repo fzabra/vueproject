@@ -1,21 +1,14 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="app-shell">
+    <header class="topbar">
+      <RouterLink to="/" class="brand">Modern Vue Shop</RouterLink>
+    </header>
+    <main class="content">
+      <RouterView />
+    </main>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
